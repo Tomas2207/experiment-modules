@@ -1,30 +1,30 @@
-## The Challenge
-Using the following wireframes, build an experiment module interface. Using your comprehension about how the application functions, construct all applicable tests. 
+# React + TypeScript + Vite
 
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-### Experimental Module Panel
-<img src="Experiment Module Example.png" alt="Experimental Module Panel"/>
+Currently, two official plugins are available:
 
-### Empty Experiment Module
-<img src="Experiment Module New.png" alt="Experimental Module New"/>
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-### Experiment Module Visual States
-<img src="Experiment Module Visual States.png" alt="Experimental Module Visual States"/>
+## Expanding the ESLint configuration
 
-### Experiment Module Unlocked
-<img src="Experiment Module Unlocked.png" alt="Experimental Module Unlocked"/>
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-### Export Module Add Iteration Module
-<img src="Export Module Add IM.png" alt="Experimental Module Panel"/>
+- Configure the top-level `parserOptions` property like this:
 
-### Iteration Module
-<img src="Iteration Module.png" alt="Iteration Module"/>
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
 
-## Instructions
-How to attempt this challenge:
-1. Create a new repo in your account and note the git url
-2. Clone this repo
-3. Solve the challenge
-4. Set your new repo as the origin: git remote set-url origin ${your repo url}
-5. Push your solution to your repo
-6. You must follow these steps for your solution to be accepted -- forks or other methods will not be considered.
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
