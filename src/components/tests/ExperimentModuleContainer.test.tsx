@@ -3,7 +3,7 @@
  */
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import ExperimentModuleContainer from "../ExperimentModuleContainer";
+import ExperimentModuleContainer from "../ExperimentModule/ExperimentModuleContainer";
 
 describe("ExperimentModuleContainer", () => {
   it("renders initial module", () => {

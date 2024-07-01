@@ -3,8 +3,8 @@
  */
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
-import IterationContainer from "../IterationContainer";
-import { Iteration } from "../ExperimentModule";
+import IterationContainer from "../IterationModule/IterationContainer";
+import { Iteration } from "../ExperimentModule/ExperimentModule";
 import "@testing-library/jest-dom";
 
 describe("IterationContainer", () => {

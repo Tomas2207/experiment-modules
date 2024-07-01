@@ -3,7 +3,7 @@
  */
 import { describe, expect, test } from "vitest";
 import { fireEvent, render, screen } from "@testing-library/react";
-import ExperimentModule from "../ExperimentModule";
+import ExperimentModule from "../ExperimentModule/ExperimentModule";
 import "@testing-library/jest-dom";
 
 describe("ExperimentModule Component", () => {

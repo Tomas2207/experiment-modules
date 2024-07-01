@@ -1,5 +1,5 @@
 import "./App.css";
-import ExperimentModuleContainer from "./components/ExperimentModuleContainer";
+import ExperimentModuleContainer from "./components/ExperimentModule/ExperimentModuleContainer";
 
 function App() {
   return (

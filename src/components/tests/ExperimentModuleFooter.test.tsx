@@ -3,22 +3,23 @@
  */
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
-import ExperimentModuleFooter from "../ExperimentModuleFooter";
+import ExperimentModuleFooter from "../ExperimentModule/ExperimentModuleFooter";
 import "@testing-library/jest-dom";
 
 describe("ExperimentModuleFooter", () => {
   it("renders default footer", () => {
     const setIterationsMock = vi.fn();
-    const setIsLockedMock = vi.fn();
+    const handleLock = vi.fn();
     render(
       <ExperimentModuleFooter
-        setIterations={setIterationsMock}
-        setIsLocked={setIsLockedMock}
-        isLocked={false}
-        setAddingIteration={vi.fn()}
-        addingIteration={false}
-        title=""
-        setTitle={vi.fn()}
+        options={{
+          setIterations: setIterationsMock,
+          handleLock: handleLock,
+          setAddingIteration: vi.fn(),
+          addingIteration: false,
+          title: "",
+          setTitle: vi.fn(),
+        }}
       />
     );
 
@@ -32,13 +33,14 @@ describe("ExperimentModuleFooter", () => {
     const setAddingIterationMock = vi.fn();
     render(
       <ExperimentModuleFooter
-        setIterations={vi.fn()}
-        setIsLocked={vi.fn()}
-        isLocked={false}
-        setAddingIteration={setAddingIterationMock}
-        addingIteration={true}
-        title=""
-        setTitle={setTitleMock}
+        options={{
+          setIterations: vi.fn(),
+          handleLock: vi.fn(),
+          setAddingIteration: setAddingIterationMock,
+          addingIteration: true,
+          title: "",
+          setTitle: setTitleMock,
+        }}
       />
     );
 

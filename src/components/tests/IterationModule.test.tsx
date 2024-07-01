@@ -4,16 +4,19 @@
 
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
-import IterationModule, { IterationModuleProps } from "../IterationModule";
+import IterationModule from "../IterationModule/IterationModule";
 import "@testing-library/jest-dom";
+import { IterationModuleProps } from "../types/IterationModuleProps";
 
 describe("IterationModule", () => {
   const mockProps: IterationModuleProps = {
-    title: "Test Iteration",
-    type: "Short",
-    number: 1,
-    handleRemove: vi.fn(),
-    handleAddType: vi.fn(),
+    options: {
+      title: "Test Iteration",
+      type: "Short",
+      number: 1,
+      handleRemove: vi.fn(),
+      handleAddType: vi.fn(),
+    },
   };
 
   it("renders with correct title and type", () => {
@@ -32,7 +35,7 @@ describe("IterationModule", () => {
 
     fireEvent.click(screen.getByText("REMOVE"));
 
-    expect(mockProps.handleRemove).toHaveBeenCalledWith(0);
+    expect(mockProps.options.handleRemove).toHaveBeenCalledWith(0);
   });
 
   it("calls handleAddType when type is selected", () => {
@@ -41,7 +44,7 @@ describe("IterationModule", () => {
     fireEvent.click(wrapper);
     fireEvent.click(screen.getByText("MEDIUM LENGTH"));
 
-    expect(mockProps.handleAddType).toHaveBeenCalledWith(0, "Medium");
+    expect(mockProps.options.handleAddType).toHaveBeenCalledWith(0, "Medium");
   });
 
   it("toggles open state when clicked", () => {
